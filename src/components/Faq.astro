@@ -1,0 +1,76 @@
+---
+// src/components/Faq.astro
+
+const faqs = [
+  {
+    question: "Come funziona il servizio di General Brokerage?",
+    answer: "Agiamo come unico referente strategico. Se il tuo progetto prevede servizi collaterali (es. traslochi complessi, logistica, forniture speciali), subappaltiamo e coordiniamo noi le migliori squadre certificate sul mercato. Tu ti interfacci solo con noi, ottimizzando costi e azzerando lo stress burocratico."
+  },
+  {
+    title: "Is my capital secure", // Mantengo una reference visiva alle domande dello screen
+    question: "Quali garanzie offrite sulla conformità urbanistica?",
+    answer: "Prima di avviare qualsiasi cantiere o presentare progetti a fondi immobiliari, eseguiamo una Due Diligence tecnica e urbanistica approfondita (TDD). Verifichiamo la presenza di sanatorie o difformità e allineiamo lo stato di fatto con il catasto per garantire la massima sicurezza legale all'investimento."
+  },
+  {
+    question: "Gestite anche progetti per fondi di investimento immobiliari?",
+    answer: "Sì, supportiamo SGR e Developer offrendo analisi di fattibilità urbanistica, stime dei costi di costruzione, Technical Due Diligence e Construction Management mirato a mitigare il rischio e a massimizzare il valore del portafoglio asset."
+  },
+  {
+    question: "Quali sono i tempi medi per l'approvazione di una pratica edilizia?",
+    answer: "I tempi variano in base alla complessità della pratica (CILA, SCIA, Permessi di Costruire) e del Comune di riferimento. Grazie alla nostra struttura integrata, depositiamo la documentazione in tempi record riducendo al minimo i tempi morti di attesa."
+  },
+  {
+    question: "Posso richiedere una ristrutturazione chiavi in mano?",
+    answer: "Assolutamente sì. Copriamo l'intero ciclo di vita: dalla progettazione architettonica iniziale 3D alla direzione lavori in cantiere con maestranze interne qualificate, fino alle pulizie e alla consegna finale dell'immobile pronto da vivere."
+  }
+];
+---
+
+<section id="faq" class="fade-in-up delay-300 py-24 bg-white font-['Inter'] relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- LATO SINISTRO: INTESTAZIONE BLOCCO (5 Colonne) -->
+      <div class="lg:col-span-5 lg:sticky lg:top-28">
+        <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 uppercase tracking-wider mb-4">
+          FAQ
+        </span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight mb-6 leading-[1.15]">
+          Guida alle Domande Edilizie <span class="text-lime-500 font-black">Comuni</span>
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-md">
+          Hai dubbi sulle pratiche burocratiche, sulla gestione dei subappalti o sul supporto per i fondi? Trova qui le risposte rapide del nostro team tecnico.
+        </p>
+      </div>
+
+      <!-- LATO DESTRO: DETTAGLI FISARMONICHE (7 Colonne) -->
+      <div class="lg:col-span-7 space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-slate-50/80 border border-slate-100/50 rounded-2xl md:rounded-3xl p-5 sm:p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden open:bg-slate-50 open:shadow-md">
+            
+            <!-- Intestazione dell'accordion (Summary) -->
+            <summary class="flex items-center justify-between gap-4 font-extrabold text-slate-800 text-sm sm:text-base tracking-tight cursor-pointer list-none select-none group-hover:text-lime-600 transition-colors">
+              <span>{faq.question}</span>
+              
+              <!-- Icona Freccia che ruota in stile Fundex -->
+              <span class="shrink-0 bg-white md:bg-transparent w-8 h-8 rounded-full flex items-center justify-center border border-slate-100 md:border-0 shadow-sm md:shadow-none">
+                <svg class="w-4 h-4 text-slate-500 group-open:-rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </summary>
+
+            <!-- Contenuto della risposta (Mostrato ad apertura) -->
+            <div class="mt-4 pt-4 border-t border-slate-200/60 text-xs sm:text-sm text-slate-600 leading-relaxed transition-all">
+              <p>{faq.answer}</p>
+            </div>
+
+          </details>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+</section>

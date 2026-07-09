@@ -1,0 +1,98 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  azienda: [
+    { text: "Chi Siamo", href: "#chi-siamo" },
+    { text: "Perché Sceglierci", href: "#why-choose-us" },
+    { text: "Testimonianze", href: "#testimonianze" },
+    { text: "Domande Frequenti", href: "#faq" }
+  ],
+  servizi: [
+    { text: "Progettazione Architettonica", href: "#servizi" },
+    { text: "Pratiche Urbanistiche", href: "#servizi" },
+    { text: "Ristrutturazioni Chiavi in Mano", href: "#servizi" },
+    { text: "General Brokerage & Logistica", href: "#servizi" }
+  ]
+};
+---
+
+<footer id="footer" class="w-full px-[10px] pb-[10px] bg-slate-50 font-['Inter']">
+  
+  <div class="relative w-full rounded-2xl overflow-hidden bg-slate-900 border-4 border-white shadow-2xl pt-16 pb-8 px-6 sm:px-12 lg:px-16">
+    
+    <div class="absolute inset-0 bg-[radial-gradient(#a3e635_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.02] z-0 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
+        
+        <div class="lg:col-span-5 space-y-5">
+          <a href="#home" class="flex items-center gap-2 group inline-block">
+            <span class="w-9 h-9 bg-lime-400 rounded-lg flex items-center justify-center text-slate-950 font-black text-lg transition-transform group-hover:scale-105">E</span>
+            <span class="text-lg font-bold tracking-tight text-white">EDIL<span class="text-lime-400 font-extrabold">PARTNER</span></span>
+          </a>
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+            Struttura tecnica integrata e General Broker d'eccellenza. Centralizziamo progettazione, urbanistica, edilizia e logistica subappaltata per azzerare la complessità operativa.
+          </p>
+          <div class="flex gap-3 pt-2">
+            <a href="#" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-lime-400 hover:text-slate-950 hover:-translate-y-0.5 transition-all" aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-lime-400 hover:text-slate-950 hover:-translate-y-0.5 transition-all" aria-label="Instagram">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 lg:pl-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-lime-400 mb-4">Azienda</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm">
+            {footerLinks.azienda.map(link => (
+              <li>
+                <a href={link.href} class="text-slate-400 hover:text-white transition-colors">{link.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-lime-400 mb-4">Servizi Core</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm">
+            {footerLinks.servizi.map(link => (
+              <li>
+                <a href={link.href} class="text-slate-400 hover:text-white transition-colors">{link.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-lime-400 mb-4">Note Legali & Sede</h4>
+          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-medium">
+            <strong class="text-white font-extrabold">Lorem Ipsum Dolor Sit Amet</strong><br />
+            Lorem Ipsum Dolor Sit Amet<br />
+            00100 Roma (RM)<br />
+            <span class="text-slate-400 block pt-3 text-[11px] font-mono">
+              P.IVA / C.F.: 01234567890<br />
+              REA: RM-123456<br />
+              Cap. Soc. €100.000 i.v.
+            </span>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-medium text-slate-500 tracking-wide">
+        <p>&copy; {currentYear} Edilpartner S.r.l. Tutti i diritti riservati.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300 transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>

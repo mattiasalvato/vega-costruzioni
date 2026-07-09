@@ -1,0 +1,87 @@
+---
+// src/components/Services.astro
+
+const services = [
+  {
+    title: "Progettazione Architettonica",
+    description: "Sviluppo di layout preliminari, modellazione 3D e rendering fotorealistici per edilizia residenziale e commerciale.",
+    icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 001 1h1a2 2 0 110 4h-1a1 1 0 00-1 1v3a1 1 0 01-1 1h-3a1 1 0 00-1 1v1a2 2 0 11-4 0v-1a1 1 0 00-1-1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+  },
+  {
+    title: "Pratiche Urbanistiche & Catasto",
+    description: "Gestione completa di CILA, SCIA, Permessi di Costruire, sanatorie edilizie e aggiornamenti planimetrici catastali.",
+    icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+  },
+  {
+    title: "Ristrutturazioni Chiavi in Mano",
+    description: "Coordinamento completo di maestranze per il restauro d'interni ed esterni con un unico referente operativo.",
+    icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+  },
+  {
+    title: "Due Diligence per Investitori",
+    description: "Analisi tecnica dello stato di fatto degli immobili, valutazione delle criticità burocratiche e stime dei costi prima dell'acquisto.",
+    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 01-2 2h-2a2 2 0 01-2-2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+  },
+  {
+    title: "General Brokerage & Forniture",
+    description: "Centralizzazione e negoziazione dei contratti con fornitori di materiali, infissi, impianti tecnologici e finiture di pregio.",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+  },
+  {
+    title: "Logistica, Traslochi & Subappalti",
+    description: "Organizzazione chiavi in mano di traslochi complessi, gestione depositi temporanei e coordinamento squadre di logistica.",
+    icon: "M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+  }
+];
+---
+
+<section id="servizi" class="fade-in-up delay-300 py-24 bg-white font-['Inter'] relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 uppercase tracking-wider mb-4">
+        Servizi
+      </span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight mb-4 leading-tight">
+        Soluzioni Intelligenti per una <span class="text-lime-500 font-black">Crescita</span> Strategica
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        Forniamo risposte chiare a problemi complessi strutturando l'offerta su aree integrate che coprono ogni singola necessità immobiliare, burocratica e logistica.
+      </p>
+    </div>
+
+    <div class="fade-in-up grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {services.map((service) => (
+        <div class="bg-slate-50/70 border border-slate-100/50 p-8 sm:p-10 rounded-[2rem] flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-slate-100 group transition-all duration-300">
+          
+          <div>
+            <div class="w-12 h-12 rounded-full bg-lime-200 text-emerald-950 flex items-center justify-center shrink-0 shadow-sm mb-6 group-hover:scale-105 transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.icon} />
+              </svg>
+            </div>
+            
+            <h3 class="text-xl font-extrabold text-slate-900 mb-4 tracking-tight group-hover:text-lime-600 transition-colors">
+              {service.title}
+            </h3>
+            
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8">
+              {service.description}
+            </p>
+          </div>
+
+          <div>
+            <a 
+              href="#contatti" 
+              class="text-xs sm:text-sm font-bold tracking-wide text-slate-800 inline-flex items-center gap-2 group-hover:text-lime-600 transition-colors"
+            >
+              Learn More <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
